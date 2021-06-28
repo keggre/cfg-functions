@@ -11,10 +11,6 @@ glasseses = open("data/glasses.txt", "r").readlines()
 lastnames = open("data/lastnames.txt", "r").readlines()
 speakers = open("data/speakers.txt", "r").readlines()
 
-for array in [faces, firstnames, glasseses, lastnames, speakers]:
-    for item in array:
-        item = item.strip()
-
 def main():
     
     prewrite()
@@ -67,7 +63,7 @@ def selectGlasses(glasses, chanceOfGlasses):
 def createName(firstnames, lastnames):
     firstname = random.choice(firstnames)
     lastname = random.choice(lastnames)
-    name = firstname + " " + lastname
+    name = firstname.strip() + " " + lastname.strip()
     return name
 
 def startClass(className):
@@ -81,9 +77,9 @@ def classBody(varbs, vals):
         varb = str(varbs[num])
         val = str(vals[num])
         if varb == "pitch":
-            f.write('\t\t'+ varb + ' = ' + val + ';\n')
+            f.write('\t\t'+ varb.strip() + ' = ' + val.strip() + ';\n')
         else:
-            f.write('\t\t'+ varb + ' = "' + val + '";\n')
+            f.write('\t\t'+ varb.strip() + ' = "' + val.strip() + '";\n')
 
 def createClassList(classList):
     for item in classList:

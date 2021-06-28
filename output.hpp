@@ -2,14 +2,10 @@ class CfgIdentities
 {
 	class turk_1
 	{
-		face = "PersianHead_A3_02
-";
+		face = "PersianHead_A3_04_sa";
 		glasses = "";
-		name = "Baran
- Kartal
-";
-		pitch = 1.1;
-		speaker = "Male02PER
-";
+		name = "Ismail Cetin";
+		pitch = 1.0;
+		speaker = "Male01PER";
 	};
 };
