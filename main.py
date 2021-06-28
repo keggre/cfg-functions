@@ -82,8 +82,13 @@ def classBody(varbs, vals):
             f.write('\t\t'+ varb.strip() + ' = "' + val.strip() + '";\n')
 
 def createClassList(classList):
+    g.write(config.tag + " = [\n\n")
     for item in classList:
-        g.write(item + "\n")
+        if classList.index(item) == len(classList) - 1:
+            g.write('\t"' + item + '"\n')
+        else:
+            g.write('\t"' + item + '",\n')
+    g.write("\n];")
 
 def createClassnames(numberOfIdentities):
     classnames = []
