@@ -1,6 +1,4 @@
 PersianHead_A3_01
 PersianHead_A3_02
 PersianHead_A3_03
-PersianHead_A3_04_a
 PersianHead_A3_04_l	
-PersianHead_A3_04_sa
