@@ -97,7 +97,10 @@ def createClassnames(numberOfIdentities):
     return classnames
 
 def createVarbs():
-    varbs = ["face","glasses","name","pitch","speaker"]
+    if config.useLastNameAsNameSound == True :
+        varbs = ["face","glasses","name","nameSound","pitch","speaker"]
+    else:
+        varbs = ["face","glasses","name","pitch","speaker"]
     return varbs
 
 def createVals(varbs):
@@ -105,10 +108,13 @@ def createVals(varbs):
     vals.append(random.choice(faces))
     glasses = selectGlasses(glasseses, config.chanceOfGlasses)
     if glasses == None:
-        vals.append("")
+        vals.append("none")
     else:
         vals.append(glasses)
-    vals.append(createName(firstnames, lastnames))
+    name = createName(firstnames, lastnames)
+    vals.append(name)
+    if config.useLastNameAsNameSound == True :
+        vals.append(name.split()[-1])
     vals.append(calculatePitch())
     vals.append(random.choice(speakers))
     return vals
