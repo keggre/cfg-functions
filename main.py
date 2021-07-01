@@ -46,7 +46,7 @@ def calculatePitch():
     pitch = ((1 / (math.sqrt(2 * math.pi))) ** ((rand ** 2) / (1/4))) / 2
     if random.choice([0,1]) == 1:
         pitch = pitch * -1
-    pitch = 1 + (pitch * config.pitchRange)
+    pitch = 1 + (pitch * config.pitchRange) + config.pitchOffset
     pitch = round(pitch, 1)
     return pitch
 
